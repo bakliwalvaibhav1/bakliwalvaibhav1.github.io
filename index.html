@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Shelter</title>
+  </head>
+  <body>
+
+    
+    <nav>
+      <div class="nav-wrapper container">
+        <a href="#!" class="brand-logo">Shelter</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li class="logged-in" style="display: none;">
+            <a href="#" class="account-details"></a>
+          </li>
+          <li class="logged-in" style="display: none;">
+            <a href="#" class="" id="logout">Logout</a>
+          </li>
+          <li class="logged-out" style="display: none;">
+            <a href="#" class="modal-trigger" data-target="modal-signup">Sign up</a>
+          </li>
+          <li class="logged-out" style="display: none;">
+            <a href="#" class="modal-trigger" data-target="modal-login">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  
+    <ul class="sidenav" id="mobile-demo">
+      <li class="logged-in" style="display: none;">
+        <a href="#" class="account-details"></a>
+      </li>
+      <li class="logged-in" style="display: none;">
+        <a href="#" class="" id="logout">Logout</a>
+      </li>
+      <li class="logged-out" style="display: none;">
+        <a href="#" class="modal-trigger" data-target="modal-signup">Sign up</a>
+      </li>
+      <li class="logged-out" style="display: none;">
+        <a href="#" class="modal-trigger" data-target="modal-login">Login</a>
+      </li>
+    </ul>
+
+    <!-- SIGN UP MODAL -->
+    <div id="modal-signup" class="modal">
+      <div class="modal-content">
+        <h4>Sign up</h4><br />
+        <form id="signup-form">
+          <div class="input-field">
+            <input type="email" id="signup-email" required />
+            <label for="signup-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="signup-password" required />
+            <label for="signup-password">Choose password</label>
+          </div>
+          <button class="btn red">Sign up</button>
+        </form>
+      </div>
+    </div>
+
+
+    <!-- LOGIN MODAL -->
+    <div id="modal-login" class="modal">
+      <div class="modal-content">
+        <h4>Login</h4><br />
+        <form id="login-form">
+          <div class="input-field">
+            <input type="email" id="login-email" required />
+            <label for="login-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="login-password" required />
+            <label for="login-password">Your password</label>
+          </div>
+          <button class="btn red">Login</button>
+        </form>
+      </div>
+    </div>
+
+
+
+    <div class="container row">
+      <div class="search col s6">
+          <input type="text" class="searchTerm" placeholder="Search..." id="search">
+          <button type="submit" class="searchButton" onclick="search()">
+          <span class="material-icons">search</span>
+          </button>
+        </div>
+    </div>
+
+    <div class="container row houses">
+      
+    </div>
+
+    <div class="house-modals">
+      
+    </div>
+    
+
+    
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-firestore.js"></script>
+    <script>
+      // Initialize Firebase
+      var firebaseConfig = {
+          apiKey: "AIzaSyAt9FGG1ADQXhWcI9LsyvftkVyKtDXr6Y4",
+          authDomain: "shelter-c02a0.firebaseapp.com",
+          databaseURL: "https://shelter-c02a0.firebaseio.com",
+          projectId: "shelter-c02a0",
+          storageBucket: "shelter-c02a0.appspot.com",
+          messagingSenderId: "327315625420",
+          appId: "1:327315625420:web:8dfbf6fda667ebef05b969"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      
+      // make auth and firestore references
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+
+    </script>
+
+    <!-- Materialize Javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/index.js"></script>
+    
+  </body>
+</html>
